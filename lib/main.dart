@@ -16,8 +16,6 @@ void main() async {
   DioHelper.init();
   await CacheHelper.init();
 
-  bool isDark = CacheHelper.getData(key: 'isDark') ?? false;
-
   Widget widget;
 
   dynamic onBoarding = CacheHelper.getData(key: 'OnBoarding');
@@ -36,18 +34,15 @@ void main() async {
 
   runApp(
     MyApp(
-      isDark: isDark,
       startWidget: widget,
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  final bool? isDark;
   final Widget startWidget;
 
   MyApp({
-    required this.isDark,
     required this.startWidget,
   });
 
