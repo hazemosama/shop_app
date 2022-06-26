@@ -2,6 +2,7 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:shopapp/layout/shop_app/cubit/cubit.dart';
 import 'package:shopapp/layout/shop_app/shop_layout.dart';
 import 'package:shopapp/modules/login/cubit/cubit.dart';
 import 'package:shopapp/modules/login/cubit/states.dart';
@@ -16,6 +17,7 @@ class ShopLoginScreen extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
+    var shopCubit = ShopCubit.get(context);
     var emailController = TextEditingController();
     var passwordController = TextEditingController();
 
